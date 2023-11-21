@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recipe Sharing Platform</title>
+  <link rel="stylesheet" href="discovery.css">
+</head>
+<body>
+  <header>
+    <h1>Recipe Sharing Platform</h1>
+    <!-- Navigation bar (if applicable) -->
+  </header>
+
+  <main>
+    <section class="recipe-form">
+      <h2>Submit a Recipe</h2>
+      <form id="recipeForm">
+        <label for="recipeTitle">Recipe Title:</label>
+        <input type="text" id="recipeTitle" name="recipeTitle" required>
+
+        <!-- Other input fields for recipe details (ingredients, instructions, etc.) -->
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section class="recipe-list">
+      <h2>Recipes</h2>
+      <div id="recipesContainer">
+        <!-- Display submitted recipes here dynamically -->
+      </div>
+    </section>
+  </main>
+
+  <script src="discovery.js"></script>
+</body>
+</html>

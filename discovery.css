@@ -1,0 +1,43 @@
+/* Basic styling for layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  
+  .recipe-form {
+    margin-bottom: 40px;
+  }
+  
+  .recipe-form label,
+  .recipe-form input,
+  .recipe-form button {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .recipe-list {
+    border-top: 2px solid #ccc;
+    padding-top: 20px;
+  }
+  
+  /* Additional styling for recipes (if needed) */
+  .recipe {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
