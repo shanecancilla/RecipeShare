@@ -10,9 +10,9 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         const credentials = data.split('\n').map(line => line.split(','));
         const found = credentials.some(cred => cred[0] === username && cred[1] === password);
         if (found) {
-            window.location.href = '/frontend/display.html'; // Redirect to display.html on successful login
+          window.location.href = '/display.html'; // Redirect to display.html on successful login
         } else {
-            document.getElementById('error-message').textContent = 'Invalid username or password. Please try again.';
+          document.getElementById('error-message').textContent = 'Invalid username or password. Please try again.';
         }
       })
       .catch(error => {
