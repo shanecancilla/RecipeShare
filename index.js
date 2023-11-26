@@ -4,13 +4,15 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const password = document.getElementById('password').value;
   
     // Perform a fetch to check the credentials
-    fetch('/backend/checkCredentials.txt')
+    fetch('checkCredentials.txt')
       .then(response => response.text())
       .then(data => {
+        console.log(data);
         const credentials = data.split('\n').map(line => line.split(','));
         const found = credentials.some(cred => cred[0] === username && cred[1] === password);
+        console.log(credentials);
         if (found) {
-          window.location.href = '/display.html'; // Redirect to display.html on successful login
+          window.location.href = 'display.html'; // Redirect to display.html on successful login
         } else {
           document.getElementById('error-message').textContent = 'Invalid username or password. Please try again.';
         }
