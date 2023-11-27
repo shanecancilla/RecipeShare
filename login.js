@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (validCredential) {
             // redirect to home page if valid
-            window.location.href = 'discovery.html';
+            window.location.href = 'homepage.html';
         } else {
             alert('Invalid username or password. Please try again.');
         }
