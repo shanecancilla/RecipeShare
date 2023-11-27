@@ -1,33 +1,21 @@
-document.getElementById('signupForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+// JavaScript file for Sign Up page (signup.js)
+
+document.addEventListener('DOMContentLoaded', function() {
+  const signupForm = document.getElementById('signupForm');
+
+  signupForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevents the default form submission
+
+    // Get input values
     const newUsername = document.getElementById('newUsername').value;
     const newPassword = document.getElementById('newPassword').value;
-  
-    // Perform a fetch to append the new credentials to the file
-    fetch('appendCredentials.php', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        username: newUsername,
-        password: newPassword
-      })
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.success) {
-        document.getElementById('success-message').textContent = 'Signup successful! You can now login.';
-        document.getElementById('error-message').textContent = '';
-      } else {
-        document.getElementById('error-message').textContent = 'Error: ' + data.message;
-        document.getElementById('success-message').textContent = '';
-      }
-    })
-    .catch(error => {
-      console.error('Error appending credentials:', error);
-      document.getElementById('error-message').textContent = 'Error appending credentials. Please try again later.';
-      document.getElementById('success-message').textContent = '';
-    });
+
+    // Simulate appending new user to a list (replace this with your logic)
+    // Here, we're just logging the new user details
+    console.log('New Username:', newUsername);
+    console.log('New Password:', newPassword);
+
+    // Redirect to Home Page after successful sign up
+    window.location.href = 'homepage.html';
   });
-  
+});
