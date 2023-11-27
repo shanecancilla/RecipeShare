@@ -1,16 +1,13 @@
 // JavaScript file for Home Page (homepage.js)
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Replace this array with your actual list of recipes (title, photo, etc.)
     const recipes = [
-      { title: 'Recipe 1', photo: 'recipe1.jpg' },
-      { title: 'Recipe 2', photo: 'recipe2.jpg' },
+      { title: 'Chicken Parmesan', photo: 'chickenparmesan.jpg' },
+      { title: 'Ice Cream Sundae', photo: 'icecreamsundae.jpg' },
       // Add more recipes as needed
     ];
   
     const recipeContainer = document.getElementById('recipeContainer');
   
-    // Display recipe titles and photos
     recipes.forEach(recipe => {
       const recipeElement = document.createElement('div');
       recipeElement.classList.add('recipe-item');
@@ -22,9 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
       photoElement.src = recipe.photo;
       photoElement.alt = recipe.title;
   
-      // Click event to view recipe details
       recipeElement.addEventListener('click', function() {
-        // Redirect to Recipe Page with the selected recipe (Page 5)
         window.location.href = `recipe.html?title=${encodeURIComponent(recipe.title)}`;
       });
   
@@ -33,21 +28,24 @@ document.addEventListener('DOMContentLoaded', function() {
       recipeContainer.appendChild(recipeElement);
     });
   
-    // Handle button clicks for navigation
     const loginButton = document.getElementById('loginButton');
     const homeButton = document.getElementById('homeButton');
     const submitButton = document.getElementById('submitButton');
   
-    loginButton.addEventListener('click', function() {
+    // Add event listeners for navigation buttons
+    loginButton.addEventListener('click', function(event) {
+      event.preventDefault();
       window.location.href = 'login.html';
     });
   
-    homeButton.addEventListener('click', function() {
+    homeButton.addEventListener('click', function(event) {
+      event.preventDefault();
       // Already on the Home Page, so no action needed
       // You might implement a refresh or scroll to the top logic here
     });
   
-    submitButton.addEventListener('click', function() {
+    submitButton.addEventListener('click', function(event) {
+      event.preventDefault();
       window.location.href = 'submitrecipe.html';
     });
   });
