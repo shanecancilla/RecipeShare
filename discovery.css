@@ -18,20 +18,12 @@ main {
   padding: 0 20px;
 }
 
-.recipe-form {
-  margin-bottom: 40px;
-}
-
-.recipe-form label,
-.recipe-form input,
-.recipe-form button {
-  display: block;
-  margin-bottom: 10px;
-}
-
 .recipe-list {
   border-top: 2px solid #ccc;
   padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column width and container size */
+  gap: 20px; /* Adjust gap between grid items */
 }
 
 /* Styling for recipes */
@@ -56,4 +48,3 @@ main {
   height: 100%;
   object-fit: cover; /* Helps maintain aspect ratio without distortion */
 }
-
