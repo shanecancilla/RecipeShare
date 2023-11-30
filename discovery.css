@@ -1,15 +1,49 @@
-/* Basic styling for layout */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
-  background-color: #333;
+  background-image: url('loginbackground.jpg');
+  background-size: cover;
+  background-position: center;
   color: #fff;
   text-align: center;
   padding: 20px 0;
+}
+
+h1 {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5); 
+  border-radius: 5px; 
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #555;
+  color: #fff;
 }
 
 main {
@@ -19,32 +53,29 @@ main {
 }
 
 .recipe-list {
-  border-top: 2px solid #ccc;
-  padding-top: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column width and container size */
-  gap: 20px; /* Adjust gap between grid items */
-}
-
-/* Styling for recipes */
-
-.recipe-item h2 {
-  margin-bottom: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
 }
 
 .recipe-item {
   border: 1px solid #ccc;
   padding: 10px;
-  margin-bottom: 20px;
-  /* Set a fixed height for all recipe items */
-  height: 200px; /* Adjust this height based on your design */
-  width: 200px;
-  overflow: hidden;
+  background-color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.recipe-item h2 {
+  margin: 0;
+  padding: 10px;
+  background-color: #f1f1f1;
 }
 
 .recipe-item img {
-  /* Ensure images fill their container */
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* Helps maintain aspect ratio without distortion */
+  height: 70%;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
 }

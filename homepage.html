@@ -2,16 +2,22 @@
 <html>
 <head>
   <title>Home Page</title>
-  <!-- Include CSS styles here -->
   <link rel="stylesheet" href="discovery.css">
 </head>
 <body>
-  <h1>Home Page</h1>
-  <!-- Display recipe titles and photos here -->
-  <div id="recipeContainer" class="recipe-list"></div>
-  <a href="index.html" id="loginButton">Login</a>
-  <a href="homepage.html" id="homeButton">Home</a>
-  <a href="submitrecipe.html" id="submitButton">Submit Recipe</a>
+  <header>
+    <h1>RecipeShare</h1>
+    <nav>
+      <button id="loginButton">Login</button>
+      <button id="homeButton">Home</button>
+      <button id="submitButton">Submit Recipe</button>
+    </nav>
+  </header>
+
+  <main>
+    <div id="recipeContainer" class="recipe-list"></div>
+  </main>
+
   <script src="homepage.js"></script>
 </body>
 </html>
