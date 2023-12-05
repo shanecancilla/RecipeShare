@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6"
+  },
+  "name": "recipeshare",
+  "description": "A platform where users can post and share recipes. Employs HTML to create forms and display content, CSS to style pages and make them responsive, and JavaScript to handle form submission and display posted recipes dynamically.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
