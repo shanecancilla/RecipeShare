@@ -9,10 +9,10 @@ const multer = require('multer');
 
 // Storage configuration for multer
 const storage = multer.diskStorage({
-  destination: function(req, file, cb) {
+  destination: function (req, file, cb) {
     cb(null, 'public/images'); // Store images in the 'public/images' directory
   },
-  filename: function(req, file, cb) {
+  filename: function (req, file, cb) {
     cb(null, Date.now() + '-' + file.originalname); // Rename the file with a unique name
   }
 });
@@ -87,10 +87,10 @@ app.get('/recipes', (req, res) => {
 // Endpoint for recipe submission with image upload
 app.post('/submitrecipe', upload.single('imageUpload'), (req, res) => {
   const { title, ingredients, instructions, mealType } = req.body;
-  const imageFilename = req.file.filename; // Multer renames the file and adds 'filename' to 'req.file'
+  const imageFilename = req.body.imageFilename; // Extracted image filename from FormData
 
   // Construct the image URL 
-  const imageUrl = `http://localhost:3000/static/images/${imageFilename}`;
+  const imageUrl = `http://localhost:3000/public/images/${imageFilename}`;
 
   // Insert new recipe into the database with the image URL
   db.run(
@@ -106,6 +106,7 @@ app.post('/submitrecipe', upload.single('imageUpload'), (req, res) => {
     }
   );
 });
+
 
 // Start the server
 const PORT = 3000;
