@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(response => response.json())
       .then(data => {
         if (data.message === 'Login successful') {
-          window.location.href = 'homepage.html';
+          window.location.href = '/static/homepage.html';
         } else {
           alert('Invalid username or password. Please try again.');
         }

@@ -8,7 +8,7 @@ body {
 }
 
 header {
-  background-image: url('loginbackground.jpg');
+  background-image: url('/static/images/loginbackground.jpg');
   background-size: cover;
   background-position: center;
   color: #fff;
