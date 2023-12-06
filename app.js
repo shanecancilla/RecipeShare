@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
     cb(null, 'public/images'); // Store images in the 'public/images' directory
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + '-' + file.originalname); // Rename the file with a unique name
+    cb(null, file.originalname);
   }
 });
 
@@ -90,7 +90,7 @@ app.post('/submitrecipe', upload.single('imageUpload'), (req, res) => {
   const imageFilename = req.body.imageFilename; // Extracted image filename from FormData
 
   // Construct the image URL 
-  const imageUrl = `http://localhost:3000/public/images/${imageFilename}`;
+  const imageUrl = `http://localhost:3000/static/images/${imageFilename}`;
 
   // Insert new recipe into the database with the image URL
   db.run(
