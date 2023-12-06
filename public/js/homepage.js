@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         recipeElement.addEventListener('click', function() {
           // Handle click event for a recipe item, e.g., redirect to recipe details page
-          window.location.href = `/static/recipe.html?title=${encodeURIComponent(recipe.title)}`;
+          window.location.href = `/static/recipe.html?id=${recipe.id}`; //change this to recipe id
         });
 
         recipeElement.appendChild(titleElement);

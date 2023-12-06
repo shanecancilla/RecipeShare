@@ -107,6 +107,24 @@ app.post('/submitrecipe', upload.single('imageUpload'), (req, res) => {
   );
 });
 
+// Endpoint to fetch details of a specific recipe
+app.get('/recipe/:id', (req, res) => {
+  const recipeId = req.params.id;
+
+  db.get('SELECT * FROM recipes WHERE id = ?', [recipeId], (err, row) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+
+    if (!row) {
+      res.status(404).json({ message: 'Recipe not found' });
+      return;
+    }
+
+    res.json({ recipe: row });
+  });
+});
 
 // Start the server
 const PORT = 3000;
