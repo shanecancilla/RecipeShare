@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Loop through the recipes and create HTML elements to display them
       recipes.forEach(recipe => {
+        // Create a recipe card
         const recipeElement = document.createElement('div');
         recipeElement.classList.add('recipe-item');
 
@@ -24,10 +25,13 @@ document.addEventListener('DOMContentLoaded', function() {
           // Handle click event for a recipe item, e.g., redirect to recipe details page
           window.location.href = `/static/recipe.html?id=${recipe.id}`; //change this to recipe id
         });
-
+        
+        //append to the card the title and the photo
         recipeElement.appendChild(titleElement);
         recipeElement.appendChild(photoElement);
+        //append to the list, a card
         recipeContainer.appendChild(recipeElement);
+
       });
     })
     .catch(error => {
