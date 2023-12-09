@@ -38,4 +38,9 @@ choco install npm
 # Install sqlite3
 choco install sqlite3
 ```
-
+## How to Run the Node.js Server
+Enter the directory 'RecipeShare' and type in the following:
+```bash
+node app.js
+```
+This will serve the page on 'localhost:3000'. Type that into any browser on the machine to view the page!
